@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>충북대학교 병원 예약 시스템</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- 헤더 섹션 -->
+        <header class="header">
+            <div class="logo">
+                <img src="logo.png" alt="병원 로고">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/home">홈</a></li>
+                    <li><a href="/about">병원 소개</a></li>
+                    <li><a href="/doctors">의료진 소개</a></li>
+                    <li><a href="/services">진료 서비스</a></li>
+                    <li><a href="/contact">연락처</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 메인 이미지 슬라이더 -->
+        <section class="main-slider">
+            <div class="slide">
+                <img src="main_image.jpg" alt="메인 이미지">
+            </div>
+            <!-- 추가 슬라이드 -->
+        </section>
+        <main>
+            <!-- 메인 페이지의 콘텐츠 -->
+            <section class="content">
+                <div class="button-group">
+                    <div class="feature-item">
+                        <div class="login">
+                        <h3>로그인</h3>
+                        <p>여기에 예약 버튼 및 예약과 관련된 간단한 안내가 포함됩니다.</p>
+                        <button onclick="location.href='/login'">로그인</button>
+                    </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="booking">
+                        <h3>진료예약</h3>
+                        <p>환자 포털 로그인. 여기에 로그인 폼 또는 로그인 버튼이 포함됩니다.</p>
+                        <button onclick="location.href='/appointment'">진료예약</button>
+                    </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="search">
+                        <h3>진료검색</h3>
+                        <p>환자 포털 로그인. 여기에 로그인 폼 또는 로그인 버튼이 포함됩니다.</p>
+                        <button onclick="location.href='/appointment/search'">진료검색</button>
+                    </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check">
+                        <h3>나의 예약 확인</h3>
+                        <p>환자 포털 로그인. 여기에 로그인 폼 또는 로그인 버튼이 포함됩니다.</p>
+                        <button onclick="location.href='/myappointments'">나의 예약 확인</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- 서비스 및 안내 섹션 -->
+        <section class="services">
+            <!-- 온라인 예약 -->
+            <article>
+                <h2>온라인 예약</h2>
+                <p>24시간 언제든지 접속하여 편리하게 진료 예약을 하실 수 있습니다. 로그인 후 원하는 진료과와 시간을 선택하기만 하면 됩니다. 예약 변경과 취소도 온라인으로 간편하게 관리할 수 있습니다.</p>
+                <strong>예약 가능 서비스:</strong>
+                <ul>
+                    <li>개인 진료 예약</li>
+                    <li>건강 검진 예약</li>
+                    <li>전문 클리닉 예약</li>
+                </ul>
+            </article>
+          
+            <!-- 진료 안내 -->
+            <article>
+                <h2>진료 안내</h2>
+                <p>진료 받으시기 전에 필요한 준비사항과 절차에 대해 자세히 안내해 드립니다. 진료 시간표와 함께 대기 시간을 최소화하기 위한 팁도 제공해 드립니다.</p>
+                <strong>준비사항:</strong>
+                <ul>
+                    <li>신분증</li>
+                    <li>의료보험 카드</li>
+                    <li>현재 복용 중인 약 목록</li>
+                </ul>
+            </article>
+          
+            <!-- 의료진 정보 -->
+            <article>
+                <h2>의료진 정보</h2>
+                <p>경험이 풍부하고 전문적인 의료진의 프로필을 확인해 보세요. 각 의료진의 전문 분야, 교육 배경, 진료 철학 등 상세한 정보를 제공하여 환자분들이 신뢰할 수 있는 선택을 하실 수 있도록 돕습니다.</p>
+                <strong>의료진 특징:</strong>
+                <ul>
+                    <li>전문 분야별 인증</li>
+                    <li>국제적 경험</li>
+                    <li>환자 중심 치료 접근법</li>
+                </ul>
+            </article>
+          
+            <!-- 환자 지원 -->
+            <article>
+                <h2>환자 지원</h2>
+                <p>환자분들의 편안하고 안전한 병원 생활을 지원하기 위한 다양한 프로그램과 서비스를 제공합니다. 재활 지원, 영양 상담, 정서적 지원 등 환자 맞춤형 서비스를 이용해 보세요.</p>
+                <strong>지원 프로그램:</strong>
+                <ul>
+                    <li>재활 프로그램</li>
+                    <li>정신 건강 서비스</li>
+                    <li>사회 복지 서비스</li>
+                </ul>
+            </article>
+          </section>
+          
+        <!-- 추가 기능 섹션 -->
+        <section class="additional-features">
+            <h3>추가 서비스</h3>
+            <p>충북대학교 병원에서는 최신 의료 기술과 시설을 활용한 첨단 진료 서비스를 제공합니다. 건강 검진 프로그램, 특수 진료, 건강증진 프로그램 등을 통해 여러분의 건강을 책임지겠습니다.</p>
+            <!-- 추가적인 서비스 내용 -->
+        </section>
+
+        <!-- 푸터 섹션 -->
+        <footer class="footer">
+            <p>&copy; 2023 충북대학교 병원. 모든 권리 보유.</p>
+        </footer>
+    </div>
+    <script src="main_script.js"></script>
+</body>
+</html>

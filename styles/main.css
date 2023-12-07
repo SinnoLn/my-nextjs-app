@@ -1,0 +1,97 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #e5e5e5; /* Set the background color to grey */
+    color: white;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px; /* Adjust padding as needed */
+}
+
+/* For individual news items, you can add margin to the articles */
+article {
+    margin-top: 30px; /* 위쪽 마진 추가 */
+    margin-bottom: 30px; /* 아래쪽 마진 추가 */
+}
+
+/* Alternatively, for all items inside the grid */
+.grid > article {
+    margin-top: 30px; /* 위쪽 마진 추가 */
+    margin-bottom: 30px; /* 아래쪽 마진 추가 */
+}
+
+/* Adjustments for the overall layout */
+header, .main-slider, main, .services, .additional-features, footer {
+    padding-left: 15px; /* 좌우 패딩을 줄임 */
+    padding-right: 15px; /* 좌우 패딩을 줄임 */
+}
+
+.bg-gray-200 img {
+    max-width: 70%; /* 이미지가 컨테이너를 넘지 않도록 함 */
+    height: auto; /* 이미지의 비율을 유지함 */
+}
+
+h2 {
+    margin-bottom: 2rem; /* Adjust the value as needed */
+}
+
+#reservationStatusSection,
+#latestNewsSection {
+    margin-top: 10rem; /* Adjust the value as needed */
+}
+
+/* Additional styling if needed */
+.bg-blue-600 {
+    background-color: #000000; /* Tailwind's blue-600 color */
+}
+
+.text-blue-600 {
+    color: #000000; /* Tailwind's blue-600 text color */
+}
+
+.shadow {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+.hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Banner Styles */
+.main-banner {
+    background-color: #fff; /* Or any color you wish */
+    color: #000; /* Or any color you wish for the text */
+}
+
+.about-btn {
+    /* Button specific styles */
+    border: none; /* Remove if you don't want flat design */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.about-btn:hover {
+    background-color: #333; /* Darken button on hover */
+}
+
+button {
+    font-size: 1.2rem; /* Increase font size */
+    font-weight: bold; /* Make font bolder */
+    text-align: center; /* Center the text */
+    padding: 1rem; /* Adjust padding to ensure text fits well */
+}
+
+h3 {
+    font-weight: bold;
+}

@@ -1,0 +1,166 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* 어두운 배경 색상 */
+    color: white; /* 밝은 텍스트 색상 */
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.header {
+    background-color: #2B2B2B; /* 헤더의 어두운 배경 색상 */
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px; /* 로고 이미지 크기 */
+}
+
+.main-nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    color: white; /* 메뉴 항목의 밝은 텍스트 색상 */
+    text-decoration: none;
+}
+
+.main-nav ul li a:hover {
+    color: #4E5DFF; /* 호버 시 강조 색상 */
+}
+
+.main-slider .slide {
+    background-color: #333; /* 슬라이더의 어두운 배경 색상 */
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.features {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: #f4f4f4; /* 배경색 변경 */
+    text-align: center;
+}
+
+.feature-item {
+    margin: 10px;
+    padding: 10px;
+    background-color: #007bff; /* 테마 색상 */
+    color: white;
+    border-radius: 5px;
+    flex-basis: calc(50% - 20px); /* 버튼을 동일한 너비로 설정 */
+}
+
+.feature-item button {
+    background-color: #4E5DFF; /* 버튼 색상 */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feature-item button:hover {
+    background-color: #6e8efb; /* 버튼 호버 색상 변경 */
+}
+
+.services article {
+    background-color: #2B2B2B; /* 서비스 섹션의 배경 색상 */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.booking-login {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.booking, .login {
+    background-color: #2B2B2B; /* 예약 및 로그인 섹션의 배경 색상 */
+    padding: 20px;
+    width: 48%;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4E5DFF; /* 버튼의 강조 색상 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6e8efb; /* 호버 시 버튼 색상 변경 */
+}
+
+.additional-features {
+    background-color: #2B2B2B; /* 추가 기능 섹션의 배경 색상 */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.footer {
+    background-color: #333; /* 푸터의 어두운 배경 색상 */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 20px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav ul li {
+        margin-top: 10px;
+    }
+    .features {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        width: 100%; /* 모바일에서 버튼은 전체 너비를 차지하도록 */
+        margin-bottom: 10px; /* 모바일에서 버튼간의 간격 */
+    }
+    
+    .feature-item button {
+        background-color: #4E5DFF; /* 버튼 색상 */
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .feature-item button:hover {
+        background-color: #6e8efb; /* 버튼 호버 색상 변경 */
+    }
+    
+}

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 const Card = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("rounded-lg border bg-card text-card-foreground shadow-sm", className)}
+    className={cn("rounded-lg border-2 border-gray-300 bg-white text-gray-800 shadow-md", className)} // 테두리와 배경색, 글자색을 변경
     {...props} />
 ))
 Card.displayName = "Card"

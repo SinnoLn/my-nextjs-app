@@ -3,6 +3,8 @@
  * @see https://v0.dev/t/K7Lm5ql
  */
 import Link from "next/link"
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -10,27 +12,63 @@ import { SelectValue, SelectTrigger, SelectLabel, SelectItem, SelectGroup, Selec
 import { Button } from "@/components/ui/button"
 
 export function Admin() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [specialty, setSpecialty] = useState('');
+
+  const router = useRouter();
+
+  const handleDoctorRegister = async (event) => {
+    event.preventDefault();
+    // API 엔드포인트에 POST 요청을 보냅니다.
+    const response = await fetch('/api/doctors', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        password,
+        specialty,
+      }),
+    });
+
+    if (response.ok) {
+      // 의사 등록 성공
+      alert('Doctor registered successfully');
+      router.push('/some-admin-page'); // 관리자 페이지로 리다이렉트
+    } else {
+      // 의사 등록 실패
+      alert('Failed to register doctor');
+    }
+  };
+
   return (
-    (<div className="flex flex-col h-screen">
+    (
+    <div className="flex flex-col h-screen">
       <nav className="bg-gray-800 p-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-white font-bold text-xl">충북대학교 병원 관리 메뉴</div>
           <div className="flex space-x-4">
             <Link href="#">
              
-                <IconDashboard className="h-4 w-4" />
+                <IconDashboard className="h-6 w-6 text-white" />
                 <span className="sr-only">Dashboard</span>
               
             </Link>
             <Link href="#">
              
-                <IconUsers className="h-4 w-4" />
+                <IconUsers className="h-6 w-6 text-white" />
                 <span className="sr-only">Users</span>
               
             </Link>
             <Link href="#">
               
-                <IconSettings className="h-4 w-4" />
+                <IconSettings className="h-6 w-6 text-white" />
                 <span className="sr-only">Settings</span>
               
             </Link>
@@ -39,6 +77,7 @@ export function Admin() {
       </nav>
       <div className="mt-10 flex-grow mb-10">
         <Card className="max-w-2xl mx-auto">
+        <form onSubmit={handleDoctorRegister}> {/* 폼에 onSubmit 이벤트 핸들러 추가 */}
           <CardHeader>
             <CardTitle>의료진 등록 메뉴</CardTitle>
             <CardDescription>아래 양식을 작성해 주세요.</CardDescription>
@@ -47,12 +86,12 @@ export function Admin() {
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="first-name">이름</Label>
-                  <Input id="first-name" placeholder="jinhoo" required />
+                  <Label htmlFor="firstName">이름</Label>
+                  <Input id="firstName" placeholder="jinhoo" required />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="last-name">성</Label>
-                  <Input id="last-name" placeholder="bae" required />
+                  <Label htmlFor="lastName">성</Label>
+                  <Input id="lastName" placeholder="bae" required />
                 </div>
               </div>
               <div className="space-y-2">
@@ -67,13 +106,15 @@ export function Admin() {
                 <Label htmlFor="role">의사 구분</Label>
                 <Select id="role" required>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a role" />
+                    <SelectValue placeholder="전문 분야" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white">
                     <SelectGroup>
                       <SelectLabel>Roles</SelectLabel>
-                      <SelectItem value="admin">Admin</SelectItem>
-                      <SelectItem value="user">User</SelectItem>
+                      <SelectItem className="hover:bg-gray-100 focus:bg-gray-100 border-b" value="가정의학과">가정의학과</SelectItem>
+                      <SelectItem className="hover:bg-gray-100 focus:bg-gray-100 border-b" value="내과">내과</SelectItem>
+                      <SelectItem className="hover:bg-gray-100 focus:bg-gray-100 border-b" value="소아청소년과">소아청소년과</SelectItem>
+                      <SelectItem className="hover:bg-gray-100 focus:bg-gray-100" value="정신건강의학과">정신건강의학과</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
@@ -85,6 +126,7 @@ export function Admin() {
               Create User
             </Button>
           </CardFooter>
+          </form>
         </Card>
       </div>
       <footer className="bg-gray-800 p-4 text-center text-white">

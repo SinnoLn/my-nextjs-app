@@ -10,9 +10,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-     --background-start-rgb: 30, 30, 30; /* 어두운 회색으로 변경 */
-    --background-end-rgb: 30, 30, 30; 
+    --foreground-rgb: 0, 0, 0; /* 글자색을 검정색으로 변경 */
+    --background-start-rgb: 255, 255, 255; /* 배경색을 흰색으로 변경 */
+    --background-end-rgb: 255, 255, 255; /* 배경색을 흰색으로 변경 */
   }
 }
 
@@ -26,11 +26,17 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.containerb {
+  display: flex; /* Flexbox 레이아웃을 사용합니다 */
+  justify-content: center; /* 가로 방향으로 중앙 정렬합니다 */
+  align-items: center; /* 세로 방향으로 중앙 정렬합니다 */
+  min-height: 100vh; /* 최소 높이를 화면 높이의 100%로 설정하여 항상 중앙에 위치하도록 합니다 */
+}
 
 .modal {
-  background-color: #2B2B2B;
-  color: white;
-  width: 414px;
+  background-color: #ffffff; /* 모달의 배경색을 흰색으로 변경 */
+  color: rgb(var(--foreground-rgb));
+  width: 700px;
   max-height: 70vh;
   overflow-y: auto;
   border-radius: 10px;
@@ -39,9 +45,17 @@ body {
   margin: 5vh auto;
 }
 
+h2 {
+  font-weight: bold;
+}
+
+p{
+  font-weight: bold;
+}
+
 .modal-header {
- background-color: #24409d; /* 그라데이션 효과 추가 */
-  color: white;
+  background-color: #f8f9fa; /* 모달 헤더 배경을 밝은 회색으로 변경 */
+  color: rgb(var(--foreground-rgb));
   padding: 12px;
   font-size: 1.5em; 
   font-weight: bold;
@@ -61,7 +75,7 @@ body {
 }
 
 .modal-section h2 {
-  color: #9ab;
+  color: rgb(var(--foreground-rgb)); /* 제목 글자색을 검정색으로 변경 */
   margin-bottom: 10px;
 }
 
@@ -72,13 +86,13 @@ body {
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
-  background-color: #333;
+  background-color: #f0f0f0; /* 모달 컨텐츠 배경을 밝은 회색으로 변경 */
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
 
 .modal-content:hover {
-  background-color: #444;
+  background-color: #e2e2e2; /* 호버시 배경색을 더 밝은 회색으로 변경 */;
 }
 
 .date-time {
@@ -88,14 +102,14 @@ body {
 
 .action {
   white-space: nowrap;
-  color: #4E5DFF; /* 변경: 기본 색상 */
+  color: rgb(var(--foreground-rgb)); /* 액션 글자색을 검정색으로 변경 */
   text-align: right; /* 텍스트를 오른쪽 정렬 */
   padding-left: 10px;
   padding-right: 10px;
 }
 
 .unavailable .action {
-  color: #888; /* 변경: 예약불가 텍스트 색상 */
+  color: #aaaaaa; /* 예약불가 텍스트 색상을 회색으로 변경 */
   cursor: default; /* 변경: 마우스 오버시 커서 변경 없음 */
 }
 
@@ -105,13 +119,13 @@ body {
 
 .modal-footer {
   padding: 20px;
-  background-color: #333;
+  background-color: #f0f0f0; /* 모달 푸터 배경을 밝은 회색으로 변경 */
   text-align: center;
 }
 
 .close-button {
-  background-color: #1E90FF;
-  color: white;
+  background-color: #d6d8db; /* 닫기 버튼 배경을 회색으로 변경 */
+  color: rgb(var(--foreground-rgb));
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -121,7 +135,39 @@ body {
 }
 
 .close-button:hover {
-  background-color: #1565C0;
+  background-color: #babec2; /* 호버시 닫기 버튼 배경을 더 밝은 회색으로 변경 */
+}
+
+.news-card {
+  background-color: #fff; /* 배경색 */
+  border-radius: 0.5rem; /* 둥근 모서리 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  transition: box-shadow 0.3s; /* 그림자 효과에 대한 전환 */
+}
+
+.news-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* 호버 상태에서 그림자 효과 변경 */
+}
+
+.news-card article {
+  display: flex; /* Flexbox 레이아웃 적용 */
+  flex-direction: column; /* 세로 스택 구조 */
+  justify-content: space-between; /* 상하 여백 균등 분포 */
+  height: 100%; /* 전체 높이 */
+}
+
+.news-card h3 {
+  color: #333; /* 제목 색상 */
+}
+
+.news-card p {
+  color: #666; /* 본문 색상 */
+  font-size: 0.875rem; /* 본문 폰트 크기 */
+}
+
+.news-card span {
+  font-weight: bold; /* 링크 볼드 처리 */
+  text-decoration: none; /* 밑줄 없앰 */
 }
 
 @media (max-width: 768px) {
